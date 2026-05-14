@@ -119,6 +119,46 @@ kushaagra-exe-ragevaluation/
 
 ---
 
+# Workflow Architecture
+
+```text
+                 ┌────────────────────┐
+                 │ Source Documents   │
+                 └─────────┬──────────┘
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │ Vector Store       │
+                 │ (Embeddings/FAISS) │
+                 └─────────┬──────────┘
+                           │
+          ┌────────────────┴────────────────┐
+          │                                 │
+          ▼                                 ▼
+ ┌──────────────────┐             ┌────────────────────┐
+ │ Strategy A       │             │ Strategy B         │
+ │ Simple Retrieval │             │ Query Expansion    │
+ └────────┬─────────┘             └─────────┬──────────┘
+          │                                 │
+          ▼                                 ▼
+   Retrieved Docs                    Expanded Retrieval
+          │                                 │
+          └──────────────┬──────────────────┘
+                         ▼
+                ┌────────────────┐
+                │ RAG Generation │
+                └───────┬────────┘
+                        ▼
+                ┌────────────────┐
+                │ RAGAS Eval     │
+                └───────┬────────┘
+                        ▼
+                ┌────────────────┐
+                │ Benchmarking   │
+                └────────────────┘
+```
+
+---
 # File-by-File Explanation
 
 ## Core Retrieval Components
@@ -383,47 +423,6 @@ Includes:
 - Retrieved contexts
 - Generated answers
 - Retrieval metadata
-
----
-
-# Workflow Architecture
-
-```text
-                 ┌────────────────────┐
-                 │ Source Documents   │
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │ Vector Store       │
-                 │ (Embeddings/FAISS) │
-                 └─────────┬──────────┘
-                           │
-          ┌────────────────┴────────────────┐
-          │                                 │
-          ▼                                 ▼
- ┌──────────────────┐             ┌────────────────────┐
- │ Strategy A       │             │ Strategy B         │
- │ Simple Retrieval │             │ Query Expansion    │
- └────────┬─────────┘             └─────────┬──────────┘
-          │                                 │
-          ▼                                 ▼
-   Retrieved Docs                    Expanded Retrieval
-          │                                 │
-          └──────────────┬──────────────────┘
-                         ▼
-                ┌────────────────┐
-                │ RAG Generation │
-                └───────┬────────┘
-                        ▼
-                ┌────────────────┐
-                │ RAGAS Eval     │
-                └───────┬────────┘
-                        ▼
-                ┌────────────────┐
-                │ Benchmarking   │
-                └────────────────┘
-```
 
 ---
 

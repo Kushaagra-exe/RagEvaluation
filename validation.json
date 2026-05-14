@@ -1,0 +1,66 @@
+[
+  {
+    "question": "What is quantum computing?",
+    "answer": "Quantum computing is an emergent field of computer science and engineering that uses the unique qualities of quantum mechanics to solve problems that are beyond the capabilities of the most powerful classical computers."
+  },
+  {
+    "question": "What are two disciplines included in the field of quantum computing?",
+    "answer": "Quantum hardware and quantum algorithms."
+  },
+  {
+    "question": "What is the primary advantage of large-scale quantum computers over modern classical machines?",
+    "answer": "By leveraging quantum physics, large-scale quantum computers can solve certain complex problems many times faster than classical machines, potentially completing tasks in minutes or hours that would take conventional computers millennia."
+  },
+  {
+    "question": "What are the two main types of tasks for which quantum computers are expected to be useful?",
+    "answer": "Quantum computers are expected to be broadly useful for modeling the behavior of physical systems and identifying patterns and structures in information."
+  },
+  {
+    "question": "Why is quantum computing considered to be of significant interest for the fields of chemistry and material science?",
+    "answer": "Quantum computing is of particular interest for these fields because it uses quantum mechanical principles to process information, which provides advantages in modeling physical systems and allows researchers to identify useful molecular candidates for pharmaceutical or engineering applications more quickly and efficiently."
+  },
+  {
+    "question": "What are two fields that could potentially benefit from the ability of quantum computers to discover patterns in data?",
+    "answer": "Biology and finance are two fields that could benefit from quantum computers' ability to discover patterns in data."
+  },
+  {
+    "question": "What is the estimated market value of the quantum computing industry by 2035?",
+    "answer": "The quantum computing industry is estimated to become a USD 1.3 trillion industry by 2035."
+  },
+  {
+    "question": "How do quantum objects behave compared to the physics typically taught in grade school?",
+    "answer": "The behaviors of quantum objects are often bizarre and counterintuitive compared to what is learned in grade-school physics."
+  },
+  {
+    "question": "What component do quantum computers use instead of traditional binary bit circuits?",
+    "answer": "Quantum computers use quantum particles called quantum bits, or qubits, to replace traditional binary bit circuits."
+  },
+  {
+    "question": "What is the only theory that can describe certain physical phenomena?",
+    "answer": "Quantum mechanics is the theory that can describe those phenomena."
+  },
+  {
+    "question": "What are the four key principles of quantum mechanics that are important for understanding quantum computing?",
+    "answer": "The four key principles are Superposition, Entanglement, Decoherence, and Interference."
+  },
+  {
+    "question": "What is the result of placing groups of qubits in a state of superposition?",
+    "answer": "Groups of qubits in superposition can create complex, multidimensional computational spaces."
+  },
+  {
+    "question": "What happens to a quantum system when it is measured?",
+    "answer": "When a quantum system is measured, its state collapses from a superposition of possibilities into a binary state, which can be registered as either a zero or a one."
+  },
+  {
+    "question": "What is considered the engine of quantum computing?",
+    "answer": "Interference is the engine of quantum computing."
+  },
+  {
+    "question": "How do wave amplitudes affect the outcomes of a measurement?",
+    "answer": "These amplitudes become the probabilities of the outcomes, where waves can either build on each other to amplify a probability or cancel each other out, both of which are forms of interference."
+  },
+  {
+    "question": "What is the process known as decoherence in quantum systems?",
+    "answer": "Decoherence is the process in which a system in a quantum state collapses into a nonquantum state."
+  }
+]

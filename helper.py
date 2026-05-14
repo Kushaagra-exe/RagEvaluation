@@ -4,8 +4,8 @@ from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 import warnings
-from vertexai.language_models import TextEmbeddingModel
-from vertexai.generative_models import GenerativeModel
+# from vertexai.language_models import TextEmbeddingModel
+# from vertexai.generative_models import GenerativeModel
 
 warnings.filterwarnings("ignore")
 
@@ -23,6 +23,11 @@ class EmbeddingModel:
             self.embedding_model = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/all-MiniLM-L6-v2"
             )
+        if model=='baai':
+            self.embedding_model = HuggingFaceEmbeddings(
+                model_name='BAAI/bge-small-en-v1.5'
+            )
+            
         elif model=='vertex':
             self.embedding_model = TextEmbeddingModel(
                 'text-embedding-004'
@@ -38,7 +43,7 @@ def get_llm(model):
     if model =='oss':
         llm = ChatGroq(api_key=API, 
                        model="openai/gpt-oss-120b",
-                        
+                        n=1
                        )
     elif model == 'gemini':
         llm = ChatGoogleGenerativeAI(

@@ -12,3 +12,6 @@ class Generated_qna(BaseModel):
     question: str = Field(description="the question generated from the given information.")
     answer: str = Field(description="the answer of the question generated from the given information.")
 
+class RagOutput(BaseModel):
+    '''The structure for how the answer from the given information should be generated'''
+    answer: str = Field(description="the answer of the question generated from the given information.")

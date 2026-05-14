@@ -13,26 +13,26 @@ queries = [item["question"] for item in data]
 print("No. of queries:", len(queries))
 # print(queries)
 
-# benchmark_results = {}
+benchmark_results = {}
 
-# for i, query in enumerate(queries, start=1):
-#     print("working on Vector retreival")
-#     print("working on query:", i)
+for i, query in enumerate(queries, start=1):
+    print("working on Vector retreival")
+    print("working on query:", i)
 
-#     benchmark_results[query] = {
+    benchmark_results[query] = {
 
-#         "strategy_a":
-#             pipeline.strategy_a(query),
+        "strategy_a":
+            pipeline.strategy_a(query),
 
-#         "strategy_b":
-#             pipeline.strategy_b(query)
-#     }
+        "strategy_b":
+            pipeline.strategy_b(query)
+    }
 
-# with open('benchmarks.json', 'w') as f:
-#     f.write(json.dumps(
-#         benchmark_results,
-#         indent=2
-#     ))
+with open('benchmarks.json', 'w') as f:
+    f.write(json.dumps(
+        benchmark_results,
+        indent=2
+    ))
 
 
 answer_result = {}

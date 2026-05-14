@@ -1,0 +1,42 @@
+Quantum computing, defined
+Quantum computing is an emergent field of computer science and engineering that harnesses the unique qualities of quantum mechanics to solve problems beyond the ability of even the most powerful classical computers.
+
+The field of quantum computing includes a range of disciplines, including quantum hardware and quantum algorithms. While still in development, quantum technology will soon be able to solve complex problems that classical supercomputers can’t solve (or can’t solve fast enough).
+
+By taking advantage of quantum physics, large-scale quantum computers would be able to tackle certain complex problems many times faster than modern classical machines. Quantum computers have the potential to solve certain problems in minutes or hours that would otherwise take conventional machines millennia to complete.
+
+Quantum mechanics, the study of physics at small scales, reveals surprising fundamental natural principles. Quantum computers specifically harness these phenomena to access mathematical methods of solving problems not available with classical computing alone.
+
+Practical applications for quantum computing
+In practice, quantum computers are expected to be broadly useful for two types of tasks: modeling the behavior of physical systems and identifying patterns and structures in information.
+
+Quantum mechanics is a bit like the operating system of the universe. A computer that uses quantum mechanical principles to process information has certain advantages in modeling physical systems. Therefore, quantum computing is of particular interest for chemistry and material science applications. For example, quantum computers might help researchers seeking useful molecules for pharmaceutical or engineering applications identify candidates more quickly and efficiently.
+
+Quantum computers can also process data by using mathematical techniques not accessible to classical computers. That means they can give structure to data and help discover patterns that classical algorithms alone might miss. In practice, this capability might be useful for applications ranging from biology (for example, protein folding) to finance.
+
+Today, much of the work of quantum computing research involves searching for algorithms and applications within these broad categories of expected use. Parallel to this search, significant work is devoted to building the technology itself.
+
+Leading institutions like IBM, Amazon, Microsoft and Google, along with startups such as Rigetti and IonQ, continue to invest heavily in this exciting technology. As a result, quantum computing is estimated to become a USD 1.3 trillion industry by 2035.
+
+Four key principles of quantum mechanics
+When discussing quantum computers, it is important to understand that at the smallest scales, the universe behaves differently from what we are used to in our day-to-day lives. Compared to what we learned in grade-school physics, the behaviors of quantum objects are often bizarre and counterintuitive.
+
+Describing the behaviors of quantum particles presents a unique challenge. Most common-sense paradigms for the natural world lack the vocabulary to communicate the surprising behaviors of quantum particles. But quantum mechanics reveals how the universe really works. Quantum computers take advantage of quantum mechanics by replacing traditional binary bit circuits with quantum particles called quantum bits, or qubits. These particles behave differently from bits, exhibiting unique properties that can be described only with quantum mechanics.
+
+To understand quantum computing, it is important to understand four key quantum mechanics principles: Superposition, Entanglement, Decoherence, Interference.
+
+Superposition
+A qubit itself isn’t useful. But it can place the quantum information it holds into a state of superposition, which represents a combination of all possible configurations of the qubit. Groups of qubits in superposition can create complex, multidimensional computational spaces. Complex problems can be represented in new ways in these spaces.
+
+When a quantum system is measured, its state collapses from a superposition of possibilities into a binary state, which can be registered as binary code—either a zero or a one.
+
+Entanglement
+Entanglement is the ability of qubits to correlate their state with other qubits. Entangled systems are so intrinsically linked that when quantum processors measure a single entangled qubit, they can immediately determine information about other qubits in the entangled system.
+
+Interference
+Interference is the engine of quantum computing. When qubits are placed into a state of collective superposition, they structure information in a way that resembles waves, with amplitudes associated with each outcome.
+
+These amplitudes become the probabilities of the outcomes of a measurement of the system. These waves can build on each other when many of them peak at a particular outcome or cancel each other out when peaks and troughs interact. Amplifying a probability or canceling out others are both forms of interference.
+
+Decoherence
+Decoherence is the process in which a system in a quantum state collapses into a nonquantum state. It can be intentionally triggered by measuring a quantum system or by other environmental factors (sometimes these factors trigger it unintentionally). Generally speaking, quantum computing requires avoiding and minimizing decoherence.s

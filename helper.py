@@ -4,6 +4,9 @@ from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 import warnings
+from vertexai.language_models import TextEmbeddingModel
+from vertexai.generative_models import GenerativeModel
+
 warnings.filterwarnings("ignore")
 
 import os
@@ -15,11 +18,16 @@ gAPI = os.environ['GOOGLE_API_KEY']
 
 class EmbeddingModel:
 
-    def __init__(self):
+    def __init__(self, model='allminilm'):
+        if model=='allminilm':
+            self.embedding_model = HuggingFaceEmbeddings(
+                model_name="sentence-transformers/all-MiniLM-L6-v2"
+            )
+        elif model=='vertex':
+            self.embedding_model = TextEmbeddingModel(
+                'text-embedding-004'
+            )
 
-        self.embedding_model = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
 
     def get(self):
 
@@ -45,6 +53,9 @@ def get_llm(model):
             max_retries=3,
             api_key = API
         )
+    elif model == 'vertex':
+        llm = GenerativeModel("gemini-1.5-flash-001")
+
     return llm
 
 

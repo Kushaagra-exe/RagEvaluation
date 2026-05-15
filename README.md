@@ -74,30 +74,27 @@ This approach improves:
 The framework evaluates both retrieval quality and answer quality using the following metrics:
 
 
-| Metric             | Description                                                               |
-| ------------------ | ------------------------------------------------------------------------- |
-| Euclidean Distance | Measures embedding-level similarity between query and retrieved documents |
-| Faithfulness       | Measures factual consistency of generated answers with retrieved context  |
-| Answer Relevancy   | Measures how relevant the generated answer is to the user query           |
-| Context Precision  | Measures how much of the retrieved context is relevant                    |
-| Context Recall     | Measures whether important information was successfully retrieved         |
-| Answer Correctness | Measures similarity between generated answer and ground truth             |
+| Metric             | Description                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------|
+| Euclidean Distance | Measures embedding-level similarity between query and retrieved documents                     |
+| Faithfulness       | Measures factual consistency of generated answers with retrieved context                      |
+| Answer Relevancy   | Measures how relevant the generated answer is to the user query                               |
+| Context Precision  | Measures how much of the retrieved context is relevant                                        |
+| Context Recall     | Measures whether important information was successfully retrieved                             |
+| Answer Correctness | Measures similarity between generated answer and ground truth                                 |
+| Recall@K           | Measures how many of the total relevant retrieved contexts appear in the top K results        |
+| Precision@K        | Measures how many of the top K retrieved contexts are actually relevant                       |
+| MRR                | Measures how early the first relevant context appears in the ranked retrieval results         |
+| NDCG@K             | Measures ranking quality by rewarding relevant contexts appearing higher in the top K results |
 
-
----
-
-# More Evaluation Metrics (future)
-
-## Recall@K
-Precision@K
-MRR
-NDCG@K
 
 # Project Structure
 
 ```text
 kushaagra-exe-ragevaluation/
 │
+├── retievalmetrics.py
+├── VectorRetrievalEval.py
 ├── answers.json
 ├── benchmark.md
 ├── benchmarks.json
@@ -485,7 +482,7 @@ python retrieval_pipeline.py
 
 ---
 
-## 5. Run Evaluation
+## 5. Run RAG Evaluation
 
 ```bash
 python RAGeval.py
@@ -499,19 +496,11 @@ python RAGeval.py
 python compare.py
 ```
 
----
+## 7. Run Vector Db Retrieval Evaluation
 
-# Future Improvements
-
-Potential enhancements:
-
-- Recall@K
-- Precision@K
-- MRR
-- NDCG@K
-
----
-
+```bash
+python VectorRetrievalEval.py
+```
 # Author
 
 **Kushaagra Mehta**  

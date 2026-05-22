@@ -8,7 +8,7 @@ strategy_b_better = 0
 equal_count = 0
 
 md_lines = ["# Benchmark Results - shows avg Eucledian distance of retieved docs for each strategy\n"]
-
+print("Benchmark Results - shows avg Eucledian distance of retieved docs for each strategy")
 for key, strategies in data.items():
 
     avg_a = sum(item["score"] for item in strategies["strategy_a"]) / len(strategies["strategy_a"])

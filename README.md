@@ -1,4 +1,8 @@
-# RAG Evaluation & Query Retrieval Benchmarking System
+<div align="center">
+
+
+# RAG Evaluation  System
+</div>
 
 ## Overview
 
@@ -38,6 +42,8 @@ The framework also supports:
 ---
 
 # Retrieval Strategies
+
+This is a sample approach to improve Retrieval - Various different techniques can be added to perform the RAG Evaluations
 
 ## Strategy A — Simple Retrieval
 
@@ -91,27 +97,30 @@ The framework evaluates both retrieval quality and answer quality using the foll
 # Project Structure
 
 ```text
-kushaagra-exe-ragevaluation/
-│
-├── retievalmetrics.py
-├── VectorRetrievalEval.py
-├── answers.json
-├── benchmark.md
-├── benchmarks.json
-├── compare.py
-├── helper.py
-├── Quantum computing.txt
-├── QueryExpander.py
-├── rag.py
-├── RAGeval.py
-├── retrieval_pipeline.py
-├── strategy_a.json
-├── strategy_b.json
-├── structure.py
-├── synthetic_generation.py
-├── synthetic_pipeline.py
-├── validation.json
-└── vectorstore.py
+
+  ├── README.md
+  ├── answers.json
+  ├── benchmark.md
+  ├── benchmarks.json
+  ├── compare.py
+  ├── Quantum computing.txt
+  ├── RAGeval.py
+  ├── strategy_a.json
+  ├── strategy_b.json
+  ├── synthetic_generation.py
+  ├── validation.json
+  ├── VectorRetrievalEval.py
+  ├── pipelines/
+  │   ├── rag.py
+  │   ├── retievalmetrics.py
+  │   ├── retrieval_pipeline.py
+  │   └── synthetic_pipeline.py
+  └── utils/
+      ├── helper.py
+      ├── QueryExpander.py
+      ├── structure.py
+      └── vectorstore.py
+
 ```
 
 ---
@@ -158,100 +167,6 @@ kushaagra-exe-ragevaluation/
 ---
 # File-by-File Explanation
 
-## Core Retrieval Components
-
-### `QueryExpander.py`
-
-Responsible for expanding user queries before retrieval.
-
-Functions:
-
-- Uses an LLM to generate semantically related query variants
-- Improves retrieval recall
-- Helps fetch broader contextual information
-- Used in Strategy B
-
-Example:
-
-```text
-Original Query:
-"What are applications of quantum computing?"
-
-Expanded Queries:
-- Uses of quantum computing
-- Real world applications of quantum computers
-- Quantum computing industry applications
-```
-
----
-
-### `helper.py`
-
-Provides utility functions and shared resources used throughout the project.
-
-Includes:
-
-- LLM initialization
-- Embedding model initialization
-- Retriever setup
-- Data ingestion utilities
-- Common helper methods
-
-Acts as the central utility module for the framework.
-
----
-
-### `vectorstore.py`
-
-Handles:
-
-- Vector database initialization
-- Document chunking
-- Embedding generation
-- Storage of documents into the vector database
-
-Responsibilities:
-
-1. Read source documents
-2. Generate embeddings
-3. Store embeddings in FAISS/vector store
-4. Enable semantic similarity retrieval
-
----
-
-### `retrieval_pipeline.py`
-
-Implements the document retrieval workflow.
-
-Contains:
-
-- Retrieval logic
-- Similarity search
-- Top-k retrieval
-- Retrieval ranking mechanisms
-
-Used internally by the RAG pipeline.
-
----
-
-### `rag.py`
-
-Main RAG orchestration pipeline.
-
-Handles:
-
-- Query processing
-- Retrieval using both strategies
-- Context generation
-- Answer generation using LLMs
-- Final response formatting
-
-Supports:
-
-- Strategy A (Simple Retrieval)
-- Strategy B (Query Expansion Retrieval)
-
----
 
 ## Evaluation Components
 
@@ -284,6 +199,20 @@ Used for:
 Helps identify which retrieval approach performs better.
 
 ---
+### `VectorRetrievalEval.py`
+
+Compares the performance of both retrieval strategies on basis of The Syntactic Metrics.
+
+Compares Vector Retrieval on following Metrics:
+- Recall@K
+- Precision@K
+- MRR
+- NDCG@K
+
+Helps identify which retrieval approach performs better.
+
+---
+
 
 ## Synthetic Dataset Generation
 
@@ -312,116 +241,6 @@ Handles:
 
 ---
 
-## Data Structures
-
-### `structure.py`
-
-Contains structured schemas and output formats.
-
-Used for:
-
-- Typed outputs
-- Response schemas
-- Consistent formatting across modules
-
----
-
-# Dataset & Source Files
-
-### `Quantum computing.txt`
-
-Primary knowledge source used for:
-
-- Vector embedding generation
-- Retrieval
-- Synthetic dataset creation
-- Evaluation benchmarking
-
----
-
-# Output Files
-
-## `benchmark.md`
-
-Contains the final benchmark report.
-
-Includes:
-
-- Euclidean distance comparisons
-- Faithfulness scores
-- Answer relevancy scores
-- Context precision scores
-- Context recall scores
-- Answer correctness scores
-- Strategy-wise performance analysis
-
-This is the primary evaluation report.
-
----
-
-## `validation.json`
-
-Synthetic validation dataset generated from source documents.
-
-Contains:
-
-- Questions
-- Ground truth answers
-- Validation samples for benchmarking
-
----
-
-## `benchmarks.json`
-
-Stores retrieved documents and evaluation outputs from both retrieval strategies.
-
-Used for:
-
-- Analysis
-- Debugging
-- Metric computation
-
----
-
-## `answers.json`
-
-Contains:
-
-- Ground truth answers
-- Expected outputs for evaluation
-
-Used during RAGAS benchmarking.
-
----
-
-## `strategy_a.json`
-
-Stores outputs from:
-
-- Simple retrieval strategy
-
-Includes:
-
-- Retrieved contexts
-- Generated answers
-- Retrieval metadata
-
----
-
-## `strategy_b.json`
-
-Stores outputs from:
-
-- Query expansion retrieval strategy
-
-Includes:
-
-- Expanded queries
-- Retrieved contexts
-- Generated answers
-- Retrieval metadata
-
----
 
 # Technologies Used
 
